@@ -8,6 +8,7 @@
 #include "windows/xbmc/xbmc.h"
 #include "windows/wdtv/wdtv.h"
 #include "windows/atv/atv.h"
+#include "windows/sonos/sonos.h"
 
 static void in_received_handler(DictionaryIterator *iter, void *context);
 static void in_dropped_handler(AppMessageResult reason, void *context);
@@ -45,6 +46,9 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
 			case MediaPlayerATV:
 				atv_in_received_handler(iter);
 				break;
+            case MediaPlayerSONOS:
+				sonos_in_received_handler(iter);
+				break;
 		}
 	}
 }
@@ -76,6 +80,9 @@ static void out_sent_handler(DictionaryIterator *sent, void *context) {
 			case MediaPlayerATV:
 				atv_out_sent_handler(sent);
 				break;
+            case MediaPlayerSONOS:
+				sonos_out_sent_handler(sent);
+				break;
 		}
 	}
 }
@@ -102,6 +109,9 @@ static void out_failed_handler(DictionaryIterator *failed, AppMessageResult reas
 				break;
 			case MediaPlayerATV:
 				atv_out_failed_handler(failed, reason);
+				break;
+            case MediaPlayerSONOS:
+				sonos_out_failed_handler(failed, reason);
 				break;
 		}
 	}

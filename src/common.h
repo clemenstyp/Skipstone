@@ -6,6 +6,7 @@ typedef enum {
 	MediaPlayerXBMC = 0x2,
 	MediaPlayerWDTV = 0x3,
 	MediaPlayerATV = 0x4,
+    MediaPlayerSONOS = 0x5,
 	MediaPlayerNONE = 0x255,
 } MediaPlayer;
 
@@ -31,4 +32,5 @@ enum {
 	KEY_PLEX_CONTROLLING_KEYPAD,
 	KEY_WDTV_CONTROLLING_TYPE,
 	KEY_ATV_CONTROLLING_TYPE,
+    KEY_SONOS_CONTROLLING_TYPE,
 };
